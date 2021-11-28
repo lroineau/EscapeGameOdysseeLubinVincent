@@ -1,0 +1,474 @@
+
+
+body {
+  display: grid;                      
+  grid-template-columns: 2% 96% 2%;   
+  grid-template-rows: 15% 85%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  position: fixed;
+
+  background-image: url('../media/ocean.jpg');
+  /*background-position:center center;*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-sizing: border-box;
+}
+  
+/* Gestion des positions autour de la carte */
+
+#nord{
+  position: absolute;
+  z-index: 500000;
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Cinzel';
+  font-size: x-small;
+  color: black;
+  text-shadow:0 0 1px #0099ff,0 0 35px #0099ff,0px 0px 35px #0099ff, 0 0 35px #0099ff;
+  color:#ffc400;
+     
+}
+#nordest{
+    grid-column: 3;
+    grid-row: 1;
+    
+     
+}
+#nordest.logo{
+    clip-path:ellipse(50% 50%);
+    
+}
+#nordouest{
+  grid-column: 1;
+  grid-row: 1;
+  
+}
+
+
+#sudest{grid-column: 3;
+     grid-row: 3;
+     margin: auto;
+     font-family: 'Cinzel';
+     text-align: center;
+     font-size: larger;
+}
+
+#sudouest{grid-column: 1;
+          grid-row: 3;
+          margin: auto;
+          font-family: 'Cinzel';
+          text-align: center;
+          font-size: larger;
+          color: white;
+          text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+
+#est{grid-column: 3;
+  grid-row: 2;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  padding: 8vh;
+}
+
+#ouest{grid-column: 1;
+       grid-row: 2;
+       align-items: center;
+       align-self: center;
+       align-content: center;
+       padding: 8vh;
+}
+
+
+/* Gestion des boutons */
+
+.bouton {
+  text-align: center;
+  padding: 5px 10px;
+  color: #eee;
+  border-radius: 4px;
+  background-color: #208fd9;
+  border: 1px solid rgb(0, 0, 0);
+  text-shadow: 0 1px 1px rgba(153, 129, 51, 0.8);
+  outline:none;
+}
+.bouton:hover,
+.bouton:focus {
+    color: white;
+    background-color: #3060ff;
+    box-shadow: 0 1px 0 rgba(255,255,255,.1),
+                0 0 1px 1px rgba(255,255,255,.3) inset,
+                0 1px rgba(255,255,255,.4) inset,
+                0 0 5px rgba(174,58,235,1);
+    border-color: rgba(255, 255, 255, .2);
+}
+
+.bouton:active {
+    background-color: #246cbf;
+    border: 1px solid black;
+}
+
+.bouton_pop{
+  text-align: center;
+  padding: 5px 10px;
+  color: #eee;
+  border-radius: 4px;
+  background-color: #208fd9;
+  border: 1px solid rgb(0, 0, 0);
+  text-shadow: 0 1px 1px rgba(153, 129, 51, 0.8);
+  outline:none;
+  margin-left: 25%;
+}
+.bouton_pop:hover,
+.bouton_pop:focus {
+    color: white;
+    background-color: #3060ff;
+    box-shadow: 0 1px 0 rgba(255,255,255,.1),
+                0 0 1px 1px rgba(255,255,255,.3) inset,
+                0 1px rgba(255,255,255,.4) inset,
+                0 0 5px rgba(174,58,235,1);
+    border-color: rgba(255, 255, 255, .2);
+}
+
+.bouton_pop:active {
+    background-color: #246cbf;
+    border: 1px solid black;
+}
+
+/* La carte, mapid est la div de la carte */
+
+#mapid{
+  height: 95%;
+  width: 100%;
+  grid-column: 2;
+  grid-row: 2; 
+  border: 2px solid black; 
+}
+
+
+#milieu{height: 100%;
+       width: 100%;
+       grid-column: 2;
+       grid-row: 2;
+       text-align: center;
+       display: flex;
+       align-content: center;
+}
+
+.leaflet-container .leaflet-control-zoomlabel {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 5px #bbb;
+    padding: 0 5px;
+    margin:0;
+    color: #333;
+    font: 11px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+.leaflet-container .leaflet-control-zoomlabel {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 5px #bbb;
+    padding: 0 5px;
+    margin:0;
+    color: #333;
+    font: 11px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+
+
+#chrono{
+  position: relative;
+  height: 40%;
+  width:40%;
+  z-index:1000;
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top:25% ;
+  margin-bottom: 25%;
+  font-family: 'Play', sans-serif;
+  font-size: xx-large;
+  text-align: center;
+  text-shadow:0 0 1px #0099ff,0 0 35px #0099ff,0px 0px 35px #0099ff, 0 0 35px #0099ff;
+  color:#ffc400;
+}
+
+
+/* Gestion de l'inventaire et de ces objets */
+
+#inventaire{
+  position:absolute;
+  display: grid;                      
+  grid-template-rows: 10% 6% 13% 13% 13% 13% 2% 10% 3% 17%;
+  grid-template-columns: 100%;
+  border: 4px double rgba(14, 12, 0, 0.79);
+  width: 90px;
+  height: 89%;
+  z-index: 500;
+  margin-top: 8px;
+  margin-left: 8px;
+  background-color:rgba(3, 0, 14, 0.39);
+  font-family: 'Cinzel';
+  text-shadow: 1px 1px 2px black;
+  color: white;
+  padding: 4px;
+}
+#objet1,#objet2,#objet3,#objet4,#objet5,#dieu1,#dieu2,#message{
+  position: relative; 
+  border-radius: 10%;
+  width: 90%;
+  height: 90%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  margin-left: 5%;
+  margin-right: 0%;
+  /* background-color:rgba(3, 0, 14, 0.548); */
+ }
+
+ #objet1{
+  grid-column: 1;
+  grid-row: 2;
+ }
+ #objet2{
+  grid-column: 1;
+  grid-row: 3;
+  visibility: hidden;
+ }
+ #objet3{
+  grid-column: 1;
+  grid-row: 4;
+  visibility: hidden;
+ }
+ #objet4{
+  grid-column: 1;
+  grid-row: 5;
+  visibility: hidden;
+ }
+ #objet5{
+  grid-column: 1;
+  grid-row: 6;
+  visibility: hidden;
+ }
+ #message{
+  grid-column: 1;
+  grid-row: 8;
+ }
+#inventaire{
+  text-align: center;
+}
+ #dieu1{
+  visibility: hidden;
+  margin-bottom: 5%;
+  background-color: #ffd000;
+  grid-column: 1;
+  grid-row: 10;
+ }
+ #dieu2{
+  background-color: #ffc400;
+  visibility: hidden;
+  grid-column: 1;
+  grid-row: 10;
+ }
+ .clignotement{
+  animation-duration: .9s;
+  animation-name: cligno;
+  animation-iteration-count:infinite;
+  transition: none;
+}
+@keyframes cligno{
+ 0%   { opacity:1; }
+ 50%   {opacity:0; }
+ 100% { opacity:1; }
+}
+
+/* Gestion de la partie en haut de la carte */
+
+#nord {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+    vertical-align: middle;
+}
+
+#espace_nord_1{
+  grid-column: 1;
+  height:100%;
+}
+
+#espace_nord_texte{
+  margin-left: 10%;
+  font-size: x-large;
+  margin-top: 0.2ch;
+}
+
+#espace_nord_2{
+  grid-column: 2;
+}
+
+
+/* Gestion des popup des dieux */
+
+#popup{
+    position: absolute;
+    visibility: hidden;
+    
+    overflow: hidden;
+    border:1px solid rgb(209, 106, 183);
+    background-color:#5569be;
+    border:1px solid #333;
+    padding:5px;
+    border-radius:2vh;
+    top: 50%;
+    left: 50%;
+    height: 1fr;
+    width : 1fr;
+}
+
+/* Gestion de l'intérieur des popup leaflet */
+
+#popup_content{
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+/* Gestion Coco */
+
+#information{
+  position: absolute;                    
+  width: 10%;
+  height: 10%;
+  z-index: 3000000;
+  margin-top: 0%;
+  margin-left: 10%;
+  margin-right:0%;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  text-shadow:0 0 1px #ffffff,0 0 35px #ffffff,0px 0px 35px #ffffff, 0 0 35px #ffffff;
+  color:#070500;
+}
+
+#options{
+  position:absolute;
+  width: 40%;
+  height: 0%;
+  z-index: 3000000;
+  margin-top: 0%;
+  margin-left: 30%;
+  margin-right: 0%;
+}
+
+.navbar{
+  position:relative;
+  height: 10%;
+  margin-top: 1%;
+  margin-left: 90%;
+  margin-right: 0%;
+  
+
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  
+  }
+  .navbar li{
+    list-style: none;
+    height: auto;
+   
+    text-align: center;
+  }
+  .navbar a{							
+  padding: 2% 0;  
+  text-decoration: none; 
+  color: white; 
+  display: block;
+  }
+  .navbar li:hover{
+    animation-name : fade ;
+    animation-delay : 1s;
+    animation-duration : 8s;
+    animation-iteration-count: 1; 
+  }
+  .navbar li ul{
+  list-style:none;
+  display: none;
+  height: auto;		 
+  }				
+  .navbar li:hover ul{
+  display:block;
+  }
+  .navbar li ul li {
+  background-color: #fdfdfdc2;
+  } 
+
+@keyframes fade {
+  0% { Opacity : 1;}
+  10% {Opacity : 0.5;}
+  20% {Opacity : 0;}
+  100%{Opacity : 0;}
+} 
+
+#code{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee;
+  background-color: darkorchid;
+}
+
+#progression{
+  display: grid;
+  width: 0%;  
+  background-color: #ffc400;
+}
+
+.transition{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-family: Cinzel;
+  font-size: larger;
+  visibility: hidden;
+  padding: 10px;
+  border-radius: 40px;
+  position: absolute;
+  z-index: 1000000000;
+  background-color: rgba(255, 255, 255, 0.801);
+  
+  }
+
+/* Gestion des indices de l'inventaire */
+  .indices{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:xx-small;
+    /* padding: 1px; */
+    text-shadow:0 0 1px #cc0707,0 0 35px #be0707,0px 0px 35px #290f0f, 0 0 35px #551414;
+
+  }
+
+  
+/* Responsive web design */
+
+@media (max-width: 26cm) {
+  #information{
+    display: none; 
+  }
+}
+
+@media (max-width: 24cm) {
+  #espace_nord_1{
+    display: none; 
+  }
+
+  #information{
+    display:none;
+  }
+  #espace_nord_2{
+    display: none;
+  }
+  body{
+    grid-template-rows: 2% 96% 2%;
+  }
+}
+

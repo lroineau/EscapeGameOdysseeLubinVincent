@@ -1,0 +1,339 @@
+/* _________ CSS de la page de fin _________ */
+
+/* Caractéristiques communes à tous les éléments de la page */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Cinzel';
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Body : gère le fond d'écran */
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../media/Gold.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Header : titre et accès au pantheon */
+
+header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    background-color: black;
+    z-index: 6;
+}
+
+header ul{
+    list-style: none;
+    display: flex;
+    z-index: 6;
+}
+
+header ul li{
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    cursor:pointer;
+    z-index: 6;
+}
+
+header ul li:hover{
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    color: black
+}
+
+/* Main : reste de l'écran */
+
+main{
+    display: flex;
+    background-image: url('../media/plage_fin.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main h1{
+    text-align: center;
+    font-size: 50px;
+    color: black;
+    background: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 3px white, 0 0 5px white;
+  }
+
+main p{
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    background: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 3px white, 0 0 5px white;
+}
+
+/* Ulysse */
+
+#ulysse {
+    position: absolute;
+    animation: movepic 5s linear forwards;
+    bottom:5%;
+    left:5%;
+}
+
+@keyframes movepic {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(20%);
+  }
+}
+  
+/* Mise en place du pantheon défilant */
+
+#scroll-container {
+    height: 100vh;
+    width: 50vw;
+  }
+    
+#scroll-text {
+    height: 100%;
+    text-align: center;
+    animation: scroll-up 5s linear forwards;
+    overflow: visible;
+  }
+    
+  @keyframes scroll-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(15%);
+    }
+  }
+  
+.fade_in {
+  display: inline-block;
+  color: black;
+  animation: fadeIn 3s linear forwards ;
+  animation-delay: 5s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+main button {
+  position: relative;
+  width: 280px;
+  height: 50px;
+  border: none;
+  outline: none;
+  opacity: 0;
+  border-radius: 10px;
+  font-size: 30px;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  cursor: pointer;
+  animation: fadeIn 3s linear forwards ;
+  animation-delay: 9s;
+}
+
+main button:hover{
+  transform: translateY(5px);
+  transition: 0.2s;
+}
+
+#bouton_retour {
+  position: absolute;
+  bottom: 10%;
+}
+
+#score{
+  background: linear-gradient(90deg, rgba(106,110,33,1) 0%, rgba(176,172,25,1) 36%, rgba(244,255,0,1) 100%);   position: absolute;
+  bottom: 25%;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px;
+  opacity: 0;
+}
+
+#music {
+  z-index:-100;
+}
+
+/* Gère l'affichage sur téléphone */
+@media only screen and (max-width: 1000px) {
+
+/* Body : gère le fond d'écran */
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../media/Gold.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Header : titre et accès au pantheon */
+
+header{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  background-color: black;
+  z-index: 6;
+}
+
+header h2 {
+  font-size: 15px;
+  padding: 5px;
+}
+
+header ul{
+  list-style: none;
+  display: flex;
+  z-index: 6;
+}
+
+header ul li{
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 12px;
+  cursor:pointer;
+  z-index: 6;
+}
+
+/* Main : reste de l'écran */
+
+main{
+    display: flex;
+    background-image: url('../media/plage_fin.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main h1{
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+main p{
+    text-align: center;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+  
+/* Mise en place du pantheon défilant */
+
+#scroll-container {
+    height: 100vh;
+    width: 90vw;
+  }
+    
+#scroll-text {
+    height: 100%;
+    text-align: center;
+    animation: scroll-up 5s linear forwards;
+    overflow: visible;
+  }
+    
+  @keyframes scroll-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(15%);
+    }
+  }
+  
+.fade_in {
+  display: inline-block;
+  color: black;
+  animation: fadeIn 3s linear forwards ;
+  animation-delay: 5s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+main button {
+  position: relative;
+  width: 130px;
+  height: 50px;
+  border: none;
+  outline: none;
+  opacity: 0;
+  border-radius: 10px;
+  font-size: 15px;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  cursor: pointer;
+  animation: fadeIn 3s linear forwards ;
+  animation-delay: 9s;
+}
+
+main button:hover{
+  transform: translateY(5px);
+  transition: 0.2s;
+}
+
+#bouton_retour {
+  position: absolute;
+  bottom: 10%;
+}
+
+#accueil {
+  display: none;
+}
+
+#ulysse {
+  display: none;
+}
+
+#score{
+  background: linear-gradient(90deg, rgba(106,110,33,1) 0%, rgba(176,172,25,1) 36%, rgba(244,255,0,1) 100%);   position: absolute;
+  bottom: 25%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px;
+  opacity: 0;
+}
+
+#music {
+  z-index:-100;
+}
+  
+}

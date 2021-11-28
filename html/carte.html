@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/png" href="../media/logo.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <link rel="stylesheet" media="screen" href="../css/carte.css">
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/master/leaflet.css" />
+   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet"> 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+   <title>L'Escape Game Odyssée</title>
+  </head>
+  <body>
+    <div id='mapid'>
+      <div id= "transition_victor" class="transition">
+        <img src="../media/victor.png" width=20% heigth=20%>
+         <p>Aie, décidement tu accumules les problèmes. Te voici échoué sur l'île de Gavdos réputée pour être l'île de Malika.<br>Pour t'en sortir, je pense que le diagramme que tu as récupéré peut t'être utile.</p>
+         <button id="bouton_victor" class="bouton">Continuer</button>
+      </div>
+
+      <div id= "transition_xav" class="transition">
+         <img src="../media/xav.png" width=20% heigth=20%>
+         <p>Inverser longitude et latitude, vraiment ?? Tu pourrais déjà être à Ithaque, mais te voilà perdu en plein milieu de la mer rouge. Par chance, il y a le dieu du réseau dans les parages. Va donc lui demander de l'aide. Allez ! <br> <em>Plus vite parti plus parti.</em></p>
+         <button id="bouton_xav" class="bouton">Continuer</button>
+      </div>
+      <div id=options>
+        <ul class="navbar">
+          <li>
+            <a href="#"><img src="../media/coco.png" height=10% width=10%></a>
+            <ul>
+              <li id='instruction_jeu'>Instruction en cours</li>
+              <li id='progression'><div id='barre_progression'>0%</div></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="information"></div>
+      <div id=inventaire>
+        <div id="objet1">
+          <p>Indices :</p> 
+        </div>
+        <div id="objet2">
+          <img class=imageinventaire src="../media/rameur.png" height=85% width=90%>
+        </div>
+        <div id="objet3">
+          <img class=imageinventaire src="../media/kangoo.png" height=100% width=90%>
+        </div>
+        <div id=objet4>
+          <img class=imageinventaire src="../media/uml.png" height=85% width=80%>
+        </div>
+        <div id=objet5>
+          <img class=imageinventaire src="../media/carte.png" height=80% width=80%>
+        </div>
+        <div id=message>
+          <p>Les messages des Dieux:</p>
+        </div>
+        <div id="dieu1" class="clignotement">
+          <img class=image src="../media/xav1.png" height=100% width=auto>
+        </div>
+        <div id="dieu2" class="clignotement">
+          <img class=image src="../media/victor1.png" height=100% width=auto>
+        </div>
+      </div>
+    </div>
+    
+    <div id= nord>
+      <div id=espace_nord_1>
+        <p id="espace_nord_texte"><u> L'escape Game Odyssée </u><br>Ramener Ulysse à Ithaque !</p>
+      </div>
+      <div id=espace_nord_2>
+        <a id="retour_menu" href="../index.html">
+        <img src="../media/logo.png" height=100% width=20% title="Retourner au menu">
+        </a>
+        
+      </div>
+    </div>
+    <div id="nordest"></div>
+    <div id="nordouest">
+      <div id="chrono"><p id=text_chrono>00:00</p>
+          </div>
+    </div>
+
+    <div id="sudouest">
+    </div>
+    <div id="sudest">
+    </div>
+    <div id="est">
+    </div>
+    <div id="ouest">
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+       crossorigin="">
+    </script>
+    
+    <script src="http://cdn.leafletjs.com/leaflet/master/leaflet.js"></script>
+    <script src="../js/carte.js"></script>
+  </body>
+</html>

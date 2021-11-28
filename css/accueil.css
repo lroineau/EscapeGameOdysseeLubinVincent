@@ -1,0 +1,319 @@
+/* _________ CSS de la page d'accueil _________ */
+
+/* Caractéristiques communes à tous les éléments de la page */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Cinzel';
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Body : gère le fond d'écran */
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../media/Gold.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Header : titre et accès au pantheon */
+
+header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    background-color: black;
+    z-index: 6;
+}
+
+header ul{
+    list-style: none;
+    display: flex;
+    z-index: 6;
+}
+
+header ul li{
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    cursor:pointer;
+    z-index: 6;
+}
+
+header ul li:hover{
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    color: black
+}
+
+/* Main : reste de l'écran */
+
+main{
+    display: flex;
+    background-image: url('../media/Ocean.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main p{
+    text-align: center;
+    font-size: 50px;
+    color: black;
+    text-shadow: 0 0 3px white, 0 0 5px white;
+  }
+
+main button {
+    position: relative;
+    width: 280px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 30px;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    cursor: pointer;
+}
+
+main button:hover{
+    transform: translateY(5px);
+    transition: 0.2s;
+}
+
+/* Mise en place du pantheon défilant */
+
+#scroll-container {
+  height: 100vh;
+}
+  
+#scroll-text {
+  height: 100%;
+  text-align: center;
+  font-size: x-large;
+  transform: translateY(100%); 
+  animation: scroll-up 45s linear infinite;
+  overflow: visible;
+}
+  
+@keyframes scroll-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-170%);
+  }
+}
+  
+/* Popup avec formulaire */
+.form-popup {
+  text-align: center;
+  display: none;
+  position: absolute;
+  right: 9%;
+  bottom: 25%;
+  z-index: 10;
+  background-color: white;
+  max-width: 300px;
+  padding: 10px;
+  }
+  
+/* Style des inputs */
+.form-container input[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: rgb(238, 233, 233);
+}
+  
+/* Plus sombre au clic */
+.form-container input[type=text]:focus {
+  background-color: rgb(180, 176, 176);
+  outline: none;
+}
+  
+/* Bouton démarrer et retour */
+.form-container .btn {
+  width: 100%;
+  margin-bottom:10px;
+  text-align: center;
+}
+  
+/* Mise en forme du tableau du hall of fame */
+table, td{
+    border: 2px solid #333;
+    background-image: url('../media/Marble.jpg');
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+th, td {
+  padding: 20px;
+  text-align: center;
+  overflow:auto
+
+}
+
+/* Position pour jouer */
+#accueil_jeu {
+  position: absolute;
+  right: 10%;
+  bottom: 55%;
+}
+
+#jouer{
+  position: absolute;
+  right: 10%;
+  bottom: 45%;
+}
+
+#jouer-invit {
+  position: absolute;
+  right: 10%;
+  bottom: 25%;
+  width: 280px;
+  height: 100px;
+}
+
+/* Position hall of fame */
+#name_hall {
+  position: absolute;
+  left: 10%;
+  top: 11%;
+}
+
+#hall_of_fame {
+  position: absolute;
+  left: 10%;
+  top: 23%;
+  overflow:hidden;
+  overflow-y: scroll;
+  height: 75%;
+  scrollbar-color: black white;
+  scrollbar-width: thin;
+}
+
+/* Gère l'affichage sur téléphone */
+@media only screen and (max-width: 800px) {
+
+
+/* Header : titre et accès au pantheon */
+
+header{
+  height: 50px;
+}
+
+header h2 {
+  font-size: 15px;
+  padding: 5px;
+}
+
+header ul li{
+  font-size: 12px;
+}
+
+main p{
+ font-size: 30px;
+}
+
+main button {
+ position: relative;
+ width: 180px;
+ height: 50px;
+ border: none;
+ outline: none;
+ border-radius: 10px;
+ font-size: 20px;
+ background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+ cursor: pointer;
+}
+
+/* Popup avec formulaire */
+.form-popup {
+  display: none;
+  position: absolute;
+  left: 13px;
+  z-index: 10;
+  background-color: white;
+  width: 90vw;;
+  padding: 10px;
+  }
+
+/* Position pour jouer */
+#accueil_jeu {
+position: absolute;
+bottom: 27%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 100%;
+}
+
+#jouer{
+position: absolute;
+bottom: 14%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+
+#jouer-invit {
+  position: absolute;
+  bottom: -3%;
+  left: 50%;
+  width: 180px;
+  height: 65px;
+  transform: translate(-50%,-50%);
+}
+
+/* Mise en forme du tableau du hall of fame */
+table, td{
+  border: 1px solid #333;
+  background-image: url('../media/Marble.jpg');
+}
+
+th, td {
+padding: 5px;
+text-align: center;
+overflow:auto;
+
+}
+/* Position hall of fame */
+#name_hall {
+  position: absolute;
+  top: 17%;
+  width: 100vw;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#hall_of_fame {
+  position: absolute;
+  top: 39%;
+  left: 52%;
+  transform: translate(-50%,-50%);
+  overflow:hidden;
+  overflow-y: scroll;
+  height: 75%;
+  scrollbar-color: black white;
+  scrollbar-width: thin;
+  max-height: 175px;
+}
+
+#scroll-text {
+height: 100%;
+font-size: 15px;
+} 
+}  

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L'Escape Game Odyssée</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="../css/fin.css">
+  <link rel="icon" type="image/png" href="../media/logo.png" />
+</head>
+  <body>
+    <header>
+      <h2>L'Escape Game Odyssée</h2>
+      <ul>
+        <li><div id="pantheon">Panthéon de l'ENSG</div></li>
+      </ul>
+    </header>
+    <main>
+
+        <div id="scroll-container">
+            <div id="scroll-text">
+            <h1 id=bravo>Félicitations </h1>
+            <p>Tu as ramené Ulysse à Ithaque. Les dieux sont impresionnés par ton courage. Ton nom sera inscrit dans le hall of fame aux côtés des plus grands héros, où il restera pour l'éternité.</p>
+         </div>
+        </div>
+        <div id='score' class='fade_in'>Tu as mis </div>
+        <div id='bouton_retour'>
+            <button id='menu'>Retour au menu</button>        
+        </div>
+        <div id='music'>
+          <embed src="../media/Final.mp3" autostart="true">
+        </div>
+        <img id='ulysse' src="../media/ulysse.png" height=65% width=auto> 
+    </main>
+    <script>
+      var pseudo=document.location.search;
+      pseudo=pseudo.split('=')[1];
+      pseudo=pseudo.split('&')[0];
+      pseudo=" "+pseudo+" !";
+
+      var score=document.location.search;
+      score=score.split('=')[2];
+      
+      // Ajout du score et du pseudo dans la page
+      document.getElementById("bravo").innerText+=pseudo;
+      document.getElementById("score").innerText+=' '+score+' minutes';
+
+      document.getElementById("menu").onclick = function () {
+      location.href = "../index.html";}
+      document.getElementById("pantheon").onclick = function () {
+        location.href = "../html/pantheon.html";}
+    </script>
+    
+  </body>
+</html>

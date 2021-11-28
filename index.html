@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L'Escape Game Odyssée</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/accueil.css">
+  <link rel="icon" type="image/png" href="media/logo.png" />
+  <body>
+    <header>
+      <h2>L'Escape Game Odyssée</h2>
+      <ul>
+        <li><div id="pantheon">Panthéon de l'ENSG</div></li>
+      </ul>
+    </header>
+
+    <main>
+      <div id='name_hall'>
+      <p>Hall of fame</p></div>
+      
+      <div id='hall_of_fame'>
+      </div>
+
+      <div id='accueil_jeu'>
+      <p>Bienvenue</p></div>
+      <button id='jouer' onclick="openPopup()">Jouer
+      </button>
+      <button id='jouer-invit'>Jouer en tant qu'invité
+      </button>
+
+    <div class="form-popup" id="PopupJeu">
+      <form action="html/teaser.html" class="form-container">
+        <label for="pseudo"><b>Pseudo</b></label>
+        <input type="text" placeholder="Entrer un pseudo" name="pseudo" required>
+    
+        <button type="submit" class="btn">Débuter</button>
+        <button type="button" class="btn" onclick="closePopup()">Retour</button>
+    
+  </div>
+    <script src="js/accueil.js"></script>
+  </main>
+  </body>
+</head>
+</html>

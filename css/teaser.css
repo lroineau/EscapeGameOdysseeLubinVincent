@@ -1,0 +1,137 @@
+/* ________ CSS du Teaser ________ */
+
+/* Le fond */
+
+body {
+	background: black;
+	padding: 0;
+	margin: 0;
+}
+
+/* Le texte */
+
+h2 {
+	font-family: 'Cinzel';
+	text-align: center;
+	font-size: 40px;
+	color: white;
+}
+
+h1 {
+	font-family: 'Cinzel';
+	text-align: center;
+	font-size: 60px;
+	color: white;
+}
+
+#phrase_1 {
+	animation: teaser 6s linear forwards;
+	position:absolute;
+	top: 50%;
+    left: 50%;
+	width: 80vw;
+    transform: translate(-50%, -50%);  
+}
+
+#phrase_2 {
+	animation: teaser 6s linear forwards;
+	opacity: 0;
+	animation-delay: 7s;
+	position:absolute;
+	top: 50%;
+    left: 50%;
+	width: 80vw;
+    transform: translate(-50%, -50%);  
+}
+
+#phrase_3 {
+	animation: teaser 6s linear forwards;
+	opacity: 0;
+	animation-delay: 14s;
+	position:absolute;
+	top: 50%;
+    left: 50%;
+	width: 80vw;
+    transform: translate(-50%, -50%);  
+}
+
+#phrase_4 {
+	animation: teaser 6s linear forwards;
+	opacity: 0;
+	animation-delay: 21s;
+	position:absolute;
+	top: 50%;
+    left: 50%;
+	width: 80vw;
+    transform: translate(-50%, -50%); 
+}
+
+#phrase_5 {
+	animation: teaser 6s linear forwards;
+	opacity: 0;
+	animation-delay: 29s;
+	position:absolute;
+	top: 50%;
+    left: 50%;
+	width: 80vw;
+    transform: translate(-50%, -50%);  
+}
+
+#passer_intro{
+	position: absolute;
+	bottom: 7%;
+	z-index: 20;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+	opacity: 0;
+	font: 'Cinzel';
+	font-size: 15px;
+	font-style: italic;
+	text-align: center;
+	color: white;
+	animation: teaser 23s linear forwards;
+	animation-delay: 3s;
+    cursor:pointer;
+}
+
+@keyframes teaser {
+	0% {
+		text-shadow: 0 0 5px white;
+		opacity: 0.2;
+	}
+	25% {
+		text-shadow: 0 0 1px white;
+		opacity: 1;
+	}
+	85% {
+		text-shadow: 0 0 1px white;
+		opacity: 1;
+	}
+	100% {
+		text-shadow: 0 0 5px white;
+		opacity: 0;
+	}
+}
+
+/* _____ Gère l'affichage sur téléphone ______ */
+
+@media only screen and (max-width: 600px) {
+
+	/* Le texte */
+
+h2 {
+	font-family: 'Cinzel';
+	text-align: center;
+	font-size: 20px;
+	color: white;
+}
+
+h1 {
+	font-family: 'Cinzel';
+	text-align: center;
+	font-size: 30px;
+	color: white;
+}
+}
+
+

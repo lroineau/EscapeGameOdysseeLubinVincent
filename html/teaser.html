@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="../css/teaser.css" />
+		<link rel="icon" type="image/png" href="../media/logo.png" />
+		<title>L'Escape Game Odyssée</title>
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet"> 
+	</head>
+	<body>
+		<div id='phrase_1'>	
+			<h2>Oléron, 3 octobre de l'an 2021</h2>
+		</div>
+
+		<div id='phrase_2' class='phrase'>	
+			<h2>Après 3 jours et 3 nuits harassantes, le WEI prend fin</h2>
+		</div>
+
+		<div id='phrase_3' class='phrase'>	
+			<h2>C'est enfin l'heure de dormir pour les valeureux guerriers de l'ENSG</h2>
+		</div>
+
+		<div id='phrase_4' class='phrase'>	
+			<h2>Mais pour un homme, ce n'est que le début d'un long voyage . . .</h2>
+		</div>
+
+		<div id='phrase_5' class='phrase'>	
+			<h1 class=passer>L'Escape Game Odyssée</h1>
+		</div>
+
+		<div id='passer_intro'>Passer l'introduction</div>
+
+		<script>
+			
+			// Quand le teaser est fini, on passe à la carte
+			setTimeout(function(){
+				document.location.pathname=document.location.pathname.replace('teaser','carte');
+			},33000);
+			
+			// Si le joueur le décide, on passe à la carte
+		    document.getElementById("passer_intro").onclick = function () {
+				document.location.pathname=document.location.pathname.replace('teaser','carte');
+		    }
+		</script>
+	</body>
+</html>
